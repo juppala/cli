@@ -563,22 +563,6 @@ test('npm access edit', function (t) {
   )
 })
 
-test('npm access blerg', function (t) {
-  common.npm(
-    [
-      'access',
-      'blerg', '@scoped/another',
-      '--registry', common.registry
-    ],
-    { cwd: pkg },
-    function (er, code, stdout, stderr) {
-      t.ok(code, 'exited with Error')
-      t.matches(stderr, /Usage:/)
-      t.end()
-    }
-  )
-})
-
 test('cleanup', function (t) {
   t.pass('cleaned up')
   server.done()
